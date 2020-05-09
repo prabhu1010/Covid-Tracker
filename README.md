@@ -13,7 +13,7 @@ Since the infection cycle varies from country to country, it would be useful to 
 
 Initially I was looking up the numbers on worldometer.info and copying them manually to a tracking spreadsheet on a daily basis. As time went on, I felt it was better to automate the process whereby:
 1) A bash script pulls the data from worldometer.info and writes to a file
-2) A python script reads the file, determines the peak, traces the numbers following the peak, and uses a Linear Regression model to predict how many days are left until the Daily New Cases metric falls to 50 people a day.
+2) A python script reads the file, determines the peak, traces the numbers following the peak, and uses an Arithmetic Progression model to predict how many days are left until the Daily New Cases metric falls to 50 people a day.
 </pre>
 </body>
 </html>
