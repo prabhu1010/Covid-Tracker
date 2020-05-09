@@ -7,6 +7,19 @@ dnc1 = []
 dnc2 = []
 dnc3 = []
 
+def IsDecreasingList(l):
+    print(l)
+    idx = 1
+    while idx < len(l):
+        if l[idx] > l[idx-1]:
+            return 0
+        idx = idx + 1
+    return 1
+
+def GetDaysToGo(lst, tgt):
+    d = round((tgt-lst[-1]) * (len(lst)-1)/(lst[-1] - lst[0]), 0)
+    return d
+
 def estimate_coef(x, y): 
 	# number of observations/points 
 	n = np.size(x) 
@@ -83,21 +96,28 @@ def GetPeaks(nList, dList):
     #print(regressX)
     regressY = list(range(1,(len(dnc3) - peakidx)+1))
     #print(regressY)
-    return regressX, regressY
+    return regressX, regressY, dateidx
 
 print(" ")
 dnc1, dateList = PrepareLists(inFile)
-regX, regY = GetPeaks(dnc1, dateList)
-x = np.array([regX]) 
-y = np.array([regY]) 
-b = estimate_coef(x, y) 
-target = 50
-#print("Estimated coefficients:\nb_0 = {} b_1 = {}".format(b[0], b[1])) 
-#X = [5000,4000,1000,800,600,400,200,150,50]
-rem =  int(b[0]+b[1]*target)
-peakidx = regX.index(max(regX))
-#print("Found at index", peakidx) 
-dateidx = len(regX) - peakidx
-   
-print(sys.argv[1], ": Last data is from", dateList[-1], "Peak value is", max(dnc3),"which occured on", dateList[-dateidx],"; Latest value is", dnc3[-1],"; To drop to 50 new cases, days remaining is", rem - regY[-1])
+regX, regY,dateidx = GetPeaks(dnc1, dateList)
+#print(regX)
+#print(regY)
+target = 500
+days_to_go = int(GetDaysToGo(regX, target))
+#print(days_to_go)
+
+print(regX)
+print(sys.argv[1], ": Last data is from", dateList[-1],"-", regX[-1],"Peak value is", max(dnc3),"which occured on", dateList[-dateidx],"; Days remaining to drop to",target,"cases is", days_to_go)
 print(" ")
+
+''' #USE THIS ONLY IF DATA IS ON A CONSISTENTLY ONE-WAY FALLING PATTERN
+cluster_lengths = [7,14,21,28]
+for i in cluster_lengths:
+    tmplist = regX[-i:]
+    tmplist.reverse()
+    print(tmplist)
+    if IsDecreasingList(tmplist):
+        print("yes")
+        print(regX[0], regX[-1], regX[0]-regX[-1],i) 
+'''

@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>United Kingdom Coronavirus: 148,377 Cases and 20,319 Deaths - Worldometer</title>
+<title>United Kingdom Coronavirus: 211,364 Cases and 31,241 Deaths - Worldometer</title>
 <meta name="description" content="United Kingdom Coronavirus update with statistics and graphs: total and new cases, deaths per day, mortality and recovery rates, current active cases, recoveries, trends and timeline.">
 
 <link rel="shortcut icon" href="/favicon/favicon.ico" type="image/x-icon">
@@ -103,19 +103,9 @@ $(document).ready(function() {
   freestar.queue = freestar.queue || [];
   freestar.config = freestar.config || {};
   freestar.debug = window.location.search.indexOf('fsdebug') === -1 ? false : true;
-
-
-  freestar.config.enabled_slots = [
-  
-  
-	
-				    "worldometers_300x600_160x600_300x250_336x280_Right_2",    
-    "worldometers_728x90_970x90_320x50_Top",
-	"worldometers_300x250_336x280_Bottom_1",
-    "worldometers_728x90_970x90_300x250_Bottom_2"
-  ];
-
+  freestar.config.enabled_slots = [];
   !function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/worldometers-info";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);
+  freestar.initCallback = function () { (freestar.config.enabled_slots.length === 0) ? freestar.initCallbackCalled = false : freestar.newAdSlots(freestar.config.enabled_slots) }
 </script>
 
 </head>
@@ -217,7 +207,7 @@ window.cookieconsent.initialise({
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <div class="label-counter" id="page-top"><a href="/coronavirus/">World</a> / <a href="/coronavirus/#countries">Countries</a> /
 United Kingdom</div>
-<div style="font-size:13px; color:#999; text-align:center">Last updated: April 25, 2020, 18:11 GMT</div>
+<div style="font-size:13px; color:#999; text-align:center">Last updated: May 09, 2020, 11:52 GMT</div>
 <div style="text-align:center;width:100%">
 <h1>
 <div style="display:inline"> <img src="/img/flags/small/tn_uk-flag.gif" width="60" border="1 px solid #aaa" /></div>&nbsp;United Kingdom </h1>
@@ -225,13 +215,13 @@ United Kingdom</div>
 <div id="maincounter-wrap" style="margin-top:15px">
 <h1>Coronavirus Cases:</h1>
 <div class="maincounter-number">
-<span style="color:#aaa">148,377 </span>
+<span style="color:#aaa">211,364 </span>
 </div>
 </div>
 <div id="maincounter-wrap" style="margin-top:15px">
 <h1>Deaths:</h1>
 <div class="maincounter-number">
-<span>20,319</span>
+<span>31,241</span>
 </div>
 </div>
 <div id="maincounter-wrap" style="margin-top:15px;">
@@ -239,6 +229,9 @@ United Kingdom</div>
 <div class="maincounter-number" style="color:#8ACA2B ">
 <span>N/A</span>
 </div>
+</div>
+<div id="maincounter-wrap">
+<h2><a target="_blank" style="font-size:22px;color:#aaa" href="https://covid19.healthdata.org/united-kingdom">Projections</a></h2>
 </div>
 <div style="margin-top:50px;"></div>
 
@@ -322,7 +315,7 @@ United Kingdom</div>
 <div class="row">
 
 </div>
- 
+
 </div> 
 </div> 
 <div class="col-md-4">
@@ -470,7 +463,7 @@ logarithmic </a>
         },
 
         xAxis: {
-            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24"]        },
+            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24","Apr 25","Apr 26","Apr 27","Apr 28","Apr 29","Apr 30","May 01","May 02","May 03","May 04","May 05","May 06","May 07","May 08"]        },
 
         yAxis: {
             title: {
@@ -494,7 +487,7 @@ logarithmic </a>
             name: 'Cases',
             color: '#33CCFF',
             lineWidth: 5,
-            data: [9,9,9,9,9,9,9,9,13,13,13,13,16,20,23,36,39,51,87,116,164,209,278,321,383,460,590,798,1140,1391,1543,1950,2626,3269,3983,5018,5683,6650,8077,9529,11658,14543,17089,19522,22141,25150,29474,33718,38168,41903,47806,51608,55242,60733,65077,73758,78991,84279,88621,93873,98476,103093,108692,114217,120067,124743,129044,133495,138078,143464]        }],
+            data: [9,9,9,9,9,9,9,9,13,13,13,13,16,20,23,36,39,51,87,116,164,209,278,321,383,460,590,798,1140,1391,1543,1950,2626,3269,3983,5018,5683,6650,8077,9529,11658,14543,17089,19522,22141,25150,29474,33718,38168,41903,47806,51608,55242,60733,65077,73758,78991,84279,88621,93873,98476,103093,108692,114217,120067,124743,129044,133495,138078,143464,148377,152840,157149,161145,165221,171253,177454,182260,186599,190584,194990,201101,206715,211364]        }],
 
         responsive: {
             rules: [{
@@ -526,7 +519,7 @@ logarithmic </a>
         },
 
         xAxis: {
-            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24"]        },
+            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24","Apr 25","Apr 26","Apr 27","Apr 28","Apr 29","Apr 30","May 01","May 02","May 03","May 04","May 05","May 06","May 07","May 08"]        },
 
         yAxis: {
             title: {
@@ -552,7 +545,7 @@ logarithmic </a>
             name: 'Cases',
             color: '#33CCFF',
             lineWidth: 5,
-            data: [9,9,9,9,9,9,9,9,13,13,13,13,16,20,23,36,39,51,87,116,164,209,278,321,383,460,590,798,1140,1391,1543,1950,2626,3269,3983,5018,5683,6650,8077,9529,11658,14543,17089,19522,22141,25150,29474,33718,38168,41903,47806,51608,55242,60733,65077,73758,78991,84279,88621,93873,98476,103093,108692,114217,120067,124743,129044,133495,138078,143464]        }],
+            data: [9,9,9,9,9,9,9,9,13,13,13,13,16,20,23,36,39,51,87,116,164,209,278,321,383,460,590,798,1140,1391,1543,1950,2626,3269,3983,5018,5683,6650,8077,9529,11658,14543,17089,19522,22141,25150,29474,33718,38168,41903,47806,51608,55242,60733,65077,73758,78991,84279,88621,93873,98476,103093,108692,114217,120067,124743,129044,133495,138078,143464,148377,152840,157149,161145,165221,171253,177454,182260,186599,190584,194990,201101,206715,211364]        }],
 
         responsive: {
             rules: [{
@@ -591,7 +584,7 @@ logarithmic </a>
         },
 
         xAxis: {
-            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24"]        },
+            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24","Apr 25","Apr 26","Apr 27","Apr 28","Apr 29","Apr 30","May 01","May 02","May 03","May 04","May 05","May 06","May 07","May 08"]        },
 
         yAxis: {
             title: {
@@ -613,7 +606,17 @@ logarithmic </a>
             name: 'Daily Cases',
             color: '#999',
             lineWidth: 5,
-            data: [null,0,0,0,0,0,0,0,4,0,0,0,3,4,3,13,3,12,36,29,48,45,69,43,62,77,130,208,342,251,152,407,676,643,714,1035,665,967,1427,1452,2129,2885,2546,2433,2619,3009,4324,4244,4450,3735,5903,3802,3634,5491,4344,8681,5233,5288,4342,5252,4603,4617,5599,5525,5850,4676,4301,4451,4583,5386]        }],
+            data: [null,0,0,0,0,0,0,0,4,0,0,0,3,4,3,13,3,12,36,29,48,45,69,43,62,77,130,208,342,251,152,407,676,643,714,1035,665,967,1427,1452,2129,2885,2546,2433,2619,3009,4324,4244,4450,3735,5903,3802,3634,5491,4344,8681,5233,5288,4342,5252,4603,4617,5599,5525,5850,4676,4301,4451,4583,5386,4913,4463,4309,3996,4076,6032,6201,4806,4339,3985,4406,6111,5614,4649]        }
+         , {
+             name: '7-day moving average',
+             type: 'spline',
+             data: [1,0,0,0,0,0,0,1,0,1,0,1,2,2,3,4,5,11,14,21,26,35,40,48,53,68,90,133,159,175,224,309,383,455,554,613,729,876,986,1198,1509,1724,1977,2213,2439,2850,3151,3375,3545,4040,4210,4299,4465,4480,5085,5298,5210,5288,5519,5391,5431,4991,5032,5113,5160,5024,5003,4998,4967,4880,4682,4630,4586,4532,4739,4856,4840,4823,4776,4835,5126,5066,4844],
+             lineWidth: 2,
+             color: '#444'
+
+         }
+        
+        ],
 
         responsive: {
             rules: [{
@@ -651,7 +654,7 @@ logarithmic </a>
         },
 
         xAxis: {
-            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24"]        },
+            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24","Apr 25","Apr 26","Apr 27","Apr 28","Apr 29","Apr 30","May 01","May 02","May 03","May 04","May 05","May 06","May 07","May 08"]        },
 
         yAxis: {
             title: {
@@ -675,7 +678,7 @@ logarithmic </a>
             name: 'Currently Infected',
             color: '#00DDDD',
             lineWidth: 5,
-            data: [1,1,1,1,1,1,1,1,5,5,5,5,8,12,15,28,31,43,79,97,144,189,257,298,359,434,562,769,1101,1336,1436,1814,2457,3060,3741,4692,5309,6180,7520,8931,10945,13649,15935,18159,20598,23226,26987,30662,34428,37455,42737,46100,48948,53501,56964,64456,68772,73323,76948,81422,85264,89020,93772,98409,103663,107890,111363,115051,118996,123614]        }
+            data: [1,1,1,1,1,1,1,1,5,5,5,5,8,12,15,28,31,43,79,97,145,190,258,300,358,435,563,770,1094,1328,1426,1804,2446,3046,3724,4675,5305,6156,7434,8700,10646,13247,15499,17718,19963,22590,26244,29836,33572,36547,41806,45040,47636,52093,55334,62654,67048,71650,75248,79456,83217,86805,91469,95879,101231,105348,108477,112091,115947,120328,124398,128441,132412,135499,138780,144138,149600,153785,157809,161506,165219,170681,175756,179779]        }
         ],
 
         responsive: {
@@ -698,7 +701,7 @@ logarithmic </a>
 </div>
 </div>
 <div class="row graph_row">
- <div class="col-md-12">
+<div class="col-md-12">
 <h3>Total Coronavirus Deaths in the United Kingdom</h3>
 <style>
     /* Tabs panel */
@@ -817,7 +820,7 @@ logarithmic </a>
             },
 
             xAxis: {
-                categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24"]            },
+                categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24","Apr 25","Apr 26","Apr 27","Apr 28","Apr 29","Apr 30","May 01","May 02","May 03","May 04","May 05","May 06","May 07","May 08"]            },
 
             yAxis: {
                 title: {
@@ -841,7 +844,7 @@ logarithmic </a>
                 name: 'Deaths',
                 color: '#FF9900',
                 lineWidth: 5,
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,3,5,6,8,10,11,21,35,55,71,104,144,177,233,281,335,422,463,578,759,1019,1228,1408,1789,2352,2921,3605,4313,4934,5373,6159,7097,7978,8958,9875,10612,11329,12107,12868,13729,14576,15464,16060,16509,17337,18100,18738,19506]            }],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,2,3,7,7,9,10,28,43,65,81,115,158,194,250,285,359,508,694,877,1161,1455,1669,2043,2425,3095,3747,4461,5221,5865,6433,7471,8505,9608,10760,11599,12285,13029,14073,14915,15944,16879,17994,18492,19051,20223,21060,21787,22792,23635,24055,24393,25302,26097,26771,27510,28131,28446,28734,29427,30076,30615,31241]            }],
 
             responsive: {
                 rules: [{
@@ -872,7 +875,7 @@ logarithmic </a>
             },
 
             xAxis: {
-                categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24"]            },
+                categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24","Apr 25","Apr 26","Apr 27","Apr 28","Apr 29","Apr 30","May 01","May 02","May 03","May 04","May 05","May 06","May 07","May 08"]            },
 
             yAxis: {
                 title: {
@@ -898,7 +901,7 @@ logarithmic </a>
                 name: 'Deaths',
                 color: '#FF9900',
                 lineWidth: 5,
-                data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,3,5,6,8,10,11,21,35,55,71,104,144,177,233,281,335,422,463,578,759,1019,1228,1408,1789,2352,2921,3605,4313,4934,5373,6159,7097,7978,8958,9875,10612,11329,12107,12868,13729,14576,15464,16060,16509,17337,18100,18738,19506]            }],
+                data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,2,3,7,7,9,10,28,43,65,81,115,158,194,250,285,359,508,694,877,1161,1455,1669,2043,2425,3095,3747,4461,5221,5865,6433,7471,8505,9608,10760,11599,12285,13029,14073,14915,15944,16879,17994,18492,19051,20223,21060,21787,22792,23635,24055,24393,25302,26097,26771,27510,28131,28446,28734,29427,30076,30615,31241]            }],
 
             responsive: {
                 rules: [{
@@ -933,11 +936,11 @@ logarithmic </a>
         },
 
         subtitle: {
-            text: 'Deaths per Day<br>Data as of 0:00 GMT+0'
+            text: 'Deaths per Day<br>Data as of 0:00 GMT+8'
         },
 
         xAxis: {
-            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24"]        },
+            categories: ["Feb 15","Feb 16","Feb 17","Feb 18","Feb 19","Feb 20","Feb 21","Feb 22","Feb 23","Feb 24","Feb 25","Feb 26","Feb 27","Feb 28","Feb 29","Mar 01","Mar 02","Mar 03","Mar 04","Mar 05","Mar 06","Mar 07","Mar 08","Mar 09","Mar 10","Mar 11","Mar 12","Mar 13","Mar 14","Mar 15","Mar 16","Mar 17","Mar 18","Mar 19","Mar 20","Mar 21","Mar 22","Mar 23","Mar 24","Mar 25","Mar 26","Mar 27","Mar 28","Mar 29","Mar 30","Mar 31","Apr 01","Apr 02","Apr 03","Apr 04","Apr 05","Apr 06","Apr 07","Apr 08","Apr 09","Apr 10","Apr 11","Apr 12","Apr 13","Apr 14","Apr 15","Apr 16","Apr 17","Apr 18","Apr 19","Apr 20","Apr 21","Apr 22","Apr 23","Apr 24","Apr 25","Apr 26","Apr 27","Apr 28","Apr 29","Apr 30","May 01","May 02","May 03","May 04","May 05","May 06","May 07","May 08"]        },
 
         yAxis: {
             title: {
@@ -959,7 +962,16 @@ logarithmic </a>
             name: 'Daily Deaths',
             color: '#999',
             lineWidth: 5,
-            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,2,1,2,2,1,10,14,20,16,33,40,33,56,48,54,87,41,115,181,260,209,180,381,563,569,684,708,621,439,786,938,881,980,917,737,717,778,761,861,847,888,596,449,828,763,638,768]        }],
+            data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,4,0,2,1,18,15,22,16,34,43,36,56,35,74,149,186,183,284,294,214,374,382,670,652,714,760,644,568,1038,1034,1103,1152,839,686,744,1044,842,1029,935,1115,498,559,1172,837,727,1005,843,420,338,909,795,674,739,621,315,288,693,649,539,626]        }  , {
+             name: '7-day moving average',
+             type: 'spline',
+             data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,2,3,6,9,11,15,21,27,31,35,42,61,83,102,139,172,197,241,274,343,410,471,538,600,627,721,773,837,900,911,917,942,943,916,905,874,914,887,860,879,877,835,845,806,794,764,725,720,712,674,642,627,620,590,568,549,533],
+             lineWidth: 2,
+             color: '#444'
+
+         }
+        
+        ],
 
         responsive: {
             rules: [{
@@ -1003,8 +1015,8 @@ logarithmic </a>
         .news_post {
             margin-bottom: 40px;
         }
-    </style>
-<style>
+    
+    
         .btn:focus,
         .btn:active {
             outline: none !important;
@@ -1095,41 +1107,49 @@ logarithmic </a>
         #news_block article {
             margin-bottom: 20px !important;
         }
+
+        .news_category_title {
+
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
     </style>
 <div class="row">
 <div class="col-md-12" id="news_block">
-<h2 align="left" id="news" style="margin-bottom: 50px;">Latest Updates</h2>
-<div class="news_date"><h4>April 25 (GMT)</h4></div><div id="newsdate2020-04-25"><div class="news_post">
+<h2 align="left" id="news" style="margin-bottom: 50px;">Latest News</h2>
+<div class="news_date"><h4>May 8 (GMT)</h4></div><div id="newsdate2020-05-08"><span id="updates" class="news_category_title">Updates</span><div class="news_post">
 <div class="news_body">
-<ul class="news_ul"><li class="news_li"><strong>4913 new cases</strong> and <strong>813 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://twitter.com/DHSCgovuk/status/1254052435577970688">source</a>]</span></li></ul>
+<ul class="news_ul"><li class="news_li"><strong>4,649 new cases</strong> and <strong>626 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://coronavirus.data.gov.uk/">source</a>]</span></li></ul>
 </div>
-</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-04-24">April 24 <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-04-24"><div class="news_post">
+</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-05-07">May 7&nbsp;&nbsp; <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-05-07"><span id="updates" class="news_category_title">Updates</span><div class="news_post">
 <div class="news_body">
-<ul class="news_ul"><li class="news_li"><strong>5386 new cases</strong> and <strong>768 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://twitter.com/DHSCgovuk/status/1253688601637986304">source</a>]</span></li></ul>
+<ul class="news_ul"><li class="news_li"><strong>5,614 new cases</strong> and <strong>539 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://coronavirus.data.gov.uk/">source</a>]</span></li></ul>
 </div>
-</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-04-23">April 23 <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-04-23"><div class="news_post">
+</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-05-06">May 6&nbsp;&nbsp; <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-05-06"><span id="updates" class="news_category_title">Updates</span><div class="news_post">
 <div class="news_body">
-<ul class="news_ul"><li class="news_li"><strong>4583 new cases</strong> and <strong>638 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://twitter.com/DHSCgovuk/status/1253321773480697856">source</a>]</span></li></ul>
+<ul class="news_ul"><li class="news_li"><strong>6,111 new cases</strong> and <strong>649 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://coronavirus.data.gov.uk/">source</a>]</span></li></ul>
 </div>
-</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-04-22">April 22 <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-04-22"><div class="news_post">
+</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-05-05">May 5&nbsp;&nbsp; <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-05-05"><span id="updates" class="news_category_title">Updates</span><div class="news_post">
 <div class="news_body">
-<ul class="news_ul"><li class="news_li"><strong>4451 new cases</strong> and <strong>763 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://twitter.com/DHSCgovuk/status/1252957313524215809">source</a>]</span></li></ul>
+<ul class="news_ul"><li class="news_li"><strong>4,406 new cases</strong> and <strong>693 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://coronavirus.data.gov.uk/">source</a>]</span></li></ul>
 </div>
-</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-04-21">April 21 <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-04-21"><div class="news_post">
+</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-05-04">May 4&nbsp;&nbsp; <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-05-04"><span id="updates" class="news_category_title">Updates</span><div class="news_post">
 <div class="news_body">
-<ul class="news_ul"><li class="news_li"><strong>4301 new cases</strong> and <strong>828 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong></li></ul>
+<ul class="news_ul"><li class="news_li"><strong>3,985 new cases</strong> and <strong>288 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://BBC news">source</a>]</span></li></ul>
 </div>
-</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-04-20">April 20 <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-04-20"><div class="news_post">
+</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-05-03">May 3&nbsp;&nbsp; <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-05-03"><span id="updates" class="news_category_title">Updates</span><div class="news_post">
 <div class="news_body">
-<ul class="news_ul"><li class="news_li"><strong>4676 new cases</strong> and <strong>449 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases-and-deaths">source</a>]</span></li></ul>
+<ul class="news_ul"><li class="news_li"><strong>4,339 new cases</strong> and <strong>315 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://coronavirus.data.gov.uk/">source</a>]</span></li></ul>
 </div>
-</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-04-19">April 19 <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-04-19"><div class="news_post">
+</div></div><button style="margin-top:30px;" class="btn btn-light date-btn" data-date="2020-05-02">May 2&nbsp;&nbsp; <i class="fa fa-chevron-circle-down"></i></button><div class="newsdate_div" style="display: none;" id="newsdate2020-05-02"><span id="updates" class="news_category_title">Updates</span><div class="news_post">
 <div class="news_body">
-<ul class="news_ul"><li class="news_li"><strong>5850 new cases</strong> and <strong>596 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://www.gov.uk/guidance/coronavirus-covid-19-information-for-the-public#number-of-cases-and-deaths">source</a>]</span></li></ul>
+<ul class="news_ul"><li class="news_li"><strong>4,806 new cases</strong> and <strong>621 new deaths</strong> in <strong><a style="text-decoration: underline;" href="/coronavirus/country/uk/">the United Kingdom</a></strong>&nbsp;<span class="source">[<a class="news_source_a" target="_blank" href="https://twitter.com/DHSCgovuk/status/1256618829746253824">source</a>]</span></li></ul>
 </div>
 </div></div>
 <div style="width:100%; text-align:center;margin: 0 auto;">
-<a style="" href="javascript:void(0)" class="load-more__btn" data-country="GBR" data-country="GBR" data-days_count="7" id="lm_2020-04-19"><button class="btn">View More News <img alt="view more" style="width:16px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAADAFBMVEX///90dHRsbGttbWxtbWtzc3Jqamlqamhra2lra2ppaWhnZ2ZpaWdmZmVwcHBoaGZvb25sbGptbW12dnZubm51dXV2dnVwcG9zc3Nzc3R3d3doaGdycnJnZ2VxcXF1dXZ0dHVvb28AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF9IACodnd2d3UAAAAAAAABAAAAAAAtRCHzwHcAABkAAAAAADAAAAAAAAAAAAAtRHgAAHcAAAAAAAAAAAAAAABMAAB2d3YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvFCwVLHc0ca8AGfQQAID0YMA4ABkAGfQAAAAAgAAAAAAAAAAAAAUAYAAAAAAAAAAwT6ReqHcABvgAxQAAAAD0NAA4ABkAGfQAAAAAAAAAAAAAAAAAAGQAAAAYAAAAzj8AABgAAAAMAAAAGAD4VvheqAYIBvgAzj/FAAAvKAD8p1MAGfMsUPaeyXcAdy0AAAAAAAAAAAAAAAAAAAAAAAC7KAAspgh2auQZ9KDkTQC3dmoAAAAAAAAAAABrwAB2auQAAGAAAAAFAAAAAAAAAIAAgAAAwBAAAAAACIgAAAADAAAAAABCAEBeqAAABvgAAAD4XqgAAAYAAAAAAAAAArEAAAAYAAAAAAAAAAD0QABAABkAAAAAAAD0kAAAABkAAAAAAAAAAAAAAAAAAABmABBmZmYMOSAAAAAAAAIBAQA4ABkydFcZ9NDhHgAAdmoAAAAAAAL0uAAAABkAAAAAABgAgAAAAAAAAAAAAAAAAADEi2NXAAAAAXRSTlMAQObYZgAAAAFiS0dEi/JvR+AAAAAJcEhZcwAALiMAAC4jAXilP3YAAACPSURBVHja5ZJBDoAgDATdg1dCVESNQfj/J4USlSrgXXujM5Ql0DR/KoF7R7JO16PlfFAY07UGJs7nhe/gxpOHFJfh5y+5nIeR46u4jMi1SbnZoL1hgxG5U8qlxgQ4mrE6yicVv9VpWABZToamGQV+GnR+jgfDUi5Z4McMz1F6U28MNU6GrXEyUP85b/yrtQMhJwlGqKwmOAAAAABJRU5ErkJggg==" /></button></a>
+<a style="" href="javascript:void(0)" class="load-more__btn" data-country="GBR" data-country="GBR" data-days_count="7" id="lm_2020-05-02"><button class="btn">View More News <img alt="view more" style="width:16px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAADAFBMVEX///90dHRsbGttbWxtbWtzc3Jqamlqamhra2lra2ppaWhnZ2ZpaWdmZmVwcHBoaGZvb25sbGptbW12dnZubm51dXV2dnVwcG9zc3Nzc3R3d3doaGdycnJnZ2VxcXF1dXZ0dHVvb28AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAF9IACodnd2d3UAAAAAAAABAAAAAAAtRCHzwHcAABkAAAAAADAAAAAAAAAAAAAtRHgAAHcAAAAAAAAAAAAAAABMAAB2d3YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvFCwVLHc0ca8AGfQQAID0YMA4ABkAGfQAAAAAgAAAAAAAAAAAAAUAYAAAAAAAAAAwT6ReqHcABvgAxQAAAAD0NAA4ABkAGfQAAAAAAAAAAAAAAAAAAGQAAAAYAAAAzj8AABgAAAAMAAAAGAD4VvheqAYIBvgAzj/FAAAvKAD8p1MAGfMsUPaeyXcAdy0AAAAAAAAAAAAAAAAAAAAAAAC7KAAspgh2auQZ9KDkTQC3dmoAAAAAAAAAAABrwAB2auQAAGAAAAAFAAAAAAAAAIAAgAAAwBAAAAAACIgAAAADAAAAAABCAEBeqAAABvgAAAD4XqgAAAYAAAAAAAAAArEAAAAYAAAAAAAAAAD0QABAABkAAAAAAAD0kAAAABkAAAAAAAAAAAAAAAAAAABmABBmZmYMOSAAAAAAAAIBAQA4ABkydFcZ9NDhHgAAdmoAAAAAAAL0uAAAABkAAAAAABgAgAAAAAAAAAAAAAAAAADEi2NXAAAAAXRSTlMAQObYZgAAAAFiS0dEi/JvR+AAAAAJcEhZcwAALiMAAC4jAXilP3YAAACPSURBVHja5ZJBDoAgDATdg1dCVESNQfj/J4USlSrgXXujM5Ql0DR/KoF7R7JO16PlfFAY07UGJs7nhe/gxpOHFJfh5y+5nIeR46u4jMi1SbnZoL1hgxG5U8qlxgQ4mrE6yicVv9VpWABZToamGQV+GnR+jgfDUi5Z4McMz1F6U28MNU6GrXEyUP85b/yrtQMhJwlGqKwmOAAAAABJRU5ErkJggg==" /></button></a>
 </div>
 <div style="width:100%;text-align:center; ">
 <div style="display: none;" class="loading lds-ellipsis">
@@ -1142,162 +1162,162 @@ logarithmic </a>
 </div>
 </div> 
 <style>
-        .lds-ellipsis {
-            margin: 0 auto;
-            display: none;
-            position: relative;
-            width: 74px;
-            height: 30px;
+            .lds-ellipsis {
+                margin: 0 auto;
+                display: none;
+                position: relative;
+                width: 74px;
+                height: 30px;
 
 
-        }
-
-
-        .lds-ellipsis div {
-            position: absolute;
-            top: 10px;
-            width: 13px;
-            height: 13px;
-            border-radius: 50%;
-            background: #777;
-            animation-timing-function: cubic-bezier(0, 1, 1, 0);
-        }
-
-
-        .lds-ellipsis div:nth-child(1) {
-            left: 8px;
-            animation: lds-ellipsis1 0.6s infinite;
-        }
-
-
-        .lds-ellipsis div:nth-child(2) {
-            left: 8px;
-            animation: lds-ellipsis2 0.6s infinite;
-        }
-
-
-        .lds-ellipsis div:nth-child(3) {
-            left: 32px;
-            animation: lds-ellipsis2 0.6s infinite;
-        }
-
-
-        .lds-ellipsis div:nth-child(4) {
-            left: 56px;
-            animation: lds-ellipsis3 0.6s infinite;
-        }
-
-
-        @keyframes lds-ellipsis1 {
-            0% {
-                transform: scale(0);
             }
 
 
-            100% {
-                transform: scale(1);
-            }
-        }
-
-
-        @keyframes lds-ellipsis3 {
-            0% {
-                transform: scale(1);
-            }
-
-
-            100% {
-                transform: scale(0);
-            }
-        }
-
-
-        @keyframes lds-ellipsis2 {
-            0% {
-                transform: translate(0, 0);
+            .lds-ellipsis div {
+                position: absolute;
+                top: 10px;
+                width: 13px;
+                height: 13px;
+                border-radius: 50%;
+                background: #777;
+                animation-timing-function: cubic-bezier(0, 1, 1, 0);
             }
 
 
-            100% {
-                transform: translate(24px, 0);
+            .lds-ellipsis div:nth-child(1) {
+                left: 8px;
+                animation: lds-ellipsis1 0.6s infinite;
             }
-        }
-    </style>
+
+
+            .lds-ellipsis div:nth-child(2) {
+                left: 8px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+
+
+            .lds-ellipsis div:nth-child(3) {
+                left: 32px;
+                animation: lds-ellipsis2 0.6s infinite;
+            }
+
+
+            .lds-ellipsis div:nth-child(4) {
+                left: 56px;
+                animation: lds-ellipsis3 0.6s infinite;
+            }
+
+
+            @keyframes lds-ellipsis1 {
+                0% {
+                    transform: scale(0);
+                }
+
+
+                100% {
+                    transform: scale(1);
+                }
+            }
+
+
+            @keyframes lds-ellipsis3 {
+                0% {
+                    transform: scale(1);
+                }
+
+
+                100% {
+                    transform: scale(0);
+                }
+            }
+
+
+            @keyframes lds-ellipsis2 {
+                0% {
+                    transform: translate(0, 0);
+                }
+
+
+                100% {
+                    transform: translate(24px, 0);
+                }
+            }
+        </style>
 <script type="text/javascript">
-        $(document).ready(function() {
+            $(document).ready(function() {
 
-            if ($('.news_post').length <= 0) {
+                if ($('.news_post').length <= 0) {
 
-                $('#news').hide();
+                    $('#news').hide();
 
-            }
+                }
 
-            $(document).on('click', '.load-more__btn', function() {
-
-
-                var ID = $(this).attr('id');
-                var country = $(this).attr('data-country');
-                var region = $(this).attr('data-region');
-                var days_count = $(this).attr('data-days_count');
+                $(document).on('click', '.load-more__btn', function() {
 
 
-                $('.load-more__btn').hide();
-                $('.loading').css('display', 'inline-block');
-                $.ajax({
-                    type: 'POST',
-                    url: '/coronavirus/news-block/news_main.php',
-                    data: 'fd=' + ID + (country ? '&country=' + country : '') + (region ? '&region=' + region : '') + (days_count ? '&days_count=' + days_count : ''),
-                    success: function(html) {
-                            $(ID).remove();
+                    var ID = $(this).attr('id');
+                    var country = $(this).attr('data-country');
+                    var region = $(this).attr('data-region');
+                    var days_count = $(this).attr('data-days_count');
+
+
+                    $('.load-more__btn').hide();
+                    $('.loading').css('display', 'inline-block');
+                    $.ajax({
+                        type: 'POST',
+                        url: '/coronavirus/news-block/news_main_updates.php',
+                        data: 'fd=' + ID + (country ? '&country=' + country : '') + (region ? '&region=' + region : '') + (days_count ? '&days_count=' + days_count : ''),
+                        success: function(html) {
+                                $(ID).remove();
+                                $('.loading').remove();
+                                $('#news_block').append(html);
+
+
+                                dateButtonsEvents();
+
+
+                            }
+
+
+                            ,
+                        error: function(objAJAXRequest, strError) {
                             $('.loading').remove();
-                            $('#news_block').append(html);
-
-
-                            dateButtonsEvents();
-
-
+                            $('.load-more__btn').show();
                         }
-
-
-                        ,
-                    error: function(objAJAXRequest, strError) {
-                        $('.loading').remove();
-                        $('.load-more__btn').show();
-                    }
+                    });
                 });
             });
-        });
 
-        function dateButtonsEvents() {
-
-
-            $('.date-btn').prop("onclick", null).off("click");
-            $('.date-btn').on('click', function() {
+            function dateButtonsEvents() {
 
 
-                var n = $('#newsdate' + $(this).data('date'));
-                if (n.is(':visible')) {
-                    n.slideUp('fast');
-                    $(this).find('i').removeClass('fa-chevron-circle-up');
-                    $(this).find('i').addClass('fa-chevron-circle-down');
-                } else {
-                    n.slideDown('fast');
+                $('.date-btn').prop("onclick", null).off("click");
+                $('.date-btn').on('click', function() {
 
 
-                    $(this).find('i').removeClass('fa-chevron-circle-down');
-                    $(this).find('i').addClass('fa-chevron-circle-up');
-                }
+                    var n = $('#newsdate' + $(this).data('date'));
+                    if (n.is(':visible')) {
+                        n.slideUp('fast');
+                        $(this).find('i').removeClass('fa-chevron-circle-up');
+                        $(this).find('i').addClass('fa-chevron-circle-down');
+                    } else {
+                        n.slideDown('fast');
+
+
+                        $(this).find('i').removeClass('fa-chevron-circle-down');
+                        $(this).find('i').addClass('fa-chevron-circle-up');
+                    }
+                });
+
+
+            }
+            $(document).ready(function() {
+
+
+
+                dateButtonsEvents();
             });
-
-
-        }
-        $(document).ready(function() {
-
-
-
-            dateButtonsEvents();
-        });
-    </script>
+        </script>
 <h2>Countries:</h2>
 <div class="spaced" style="margin-top:20px ">
 <ul>
@@ -1414,7 +1434,7 @@ logarithmic </a>
 
 <div align="center" id="worldometers_300x250_336x280_Bottom_1">
 <script data-cfasync="false" type="text/javascript">
-    freestar.queue.push(function () { googletag.display('Worldometers_300x250_336x280_Bottom_1'); });
+    freestar.config.enabled_slots.push({ placementName: "worldometers_300x250_336x280_Bottom_1", slotId: "worldometers_300x250_336x280_Bottom_1" });
 </script>
 </div>
 <div style="margin-top:40px"></div>

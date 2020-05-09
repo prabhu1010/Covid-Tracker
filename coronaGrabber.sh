@@ -4,6 +4,7 @@ for nation in "uk" "us" "italy" "spain" "germany"
         wget -O ${nation}.txt -nv "$URL"
     done
 for nation in "uk" "us" "italy" "spain" "germany"
+#for nation in "uk" 
     do
         if test -s ${nation}.txt
         then
